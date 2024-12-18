@@ -16,14 +16,18 @@ const server = fastify();
 
 // Post cria os videos 
 server.post("/Videos", (req, reply) => {
+
+  const {title, description, duration,} = req.body
+
+    
+
   database.create({
-    title: "title",
-    video: "video",
-    description: "description",
-    duration: "duration", 
+    title,
+    description,
+    duration,
   });
 
-  
+
 
   return reply.status(201).send();
 });
@@ -31,18 +35,35 @@ server.post("/Videos", (req, reply) => {
 
 
 server.get("/Videos", () => {
-  return "hello node";
+  const videos = database.list()
+  return videos
 });
 
 
 // PUT Atualiza 
-server.put("/Videos/:id", () => {
-  return "hello Videos";
+server.put("/Videos/:id", (req, reply) => {
+  const  VideosID = req.params.id
+  const {title, description, duration,} = req.body
+
+   database.update(VideosID, {
+    title,
+    description,
+    duration,
+  })
+
+  return reply.status(204).send()
+
 });
 
 // DELETE Apaga o conteudo  
-server.delete("/Videos/:id", () => {
-  return "hello Videos";
+server.delete("/Videos/:id", (req, reply) => {
+  
+  const  VideosID = req.params.id
+
+  database.delete(VideosID)
+
+  return reply.status(204).send()
+
 });
 
 server.listen({
