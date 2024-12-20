@@ -1,5 +1,4 @@
 POST https://node-bxsg.onrender.com/Videos
-POST https://node-bxsg.onrender.com/Videos
 Content-Type: application/json 
 
 {
@@ -12,14 +11,9 @@ Content-Type: application/json
 }
 
 ###
-
-
-GET  https://node-bxsg.onrender.com/Videos
 GET  https://node-bxsg.onrender.com/Videos
 
 ###
-
-PUT https://node-bxsg.onrender.com/Videos/
 PUT https://node-bxsg.onrender.com/Videos/
 Content-Type: application/json 
 
@@ -33,7 +27,4 @@ Content-Type: application/json
 }
 
 ###
-
-DELETE  https://node-bxsg.onrender.com/Videos/
-
 DELETE  https://node-bxsg.onrender.com/Videos/
