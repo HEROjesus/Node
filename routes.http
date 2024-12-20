@@ -1,7 +1,11 @@
 POST https://node-bxsg.onrender.com/Videos
+POST https://node-bxsg.onrender.com/Videos
 Content-Type: application/json 
 
 {
+    "title": "video 01",
+    "description": "Descrição do vídeo 01",
+    "duration": 120
     "title": "video 01",
     "description": "Descrição do vídeo 01",
     "duration": 120
@@ -11,9 +15,11 @@ Content-Type: application/json
 
 
 GET  https://node-bxsg.onrender.com/Videos
+GET  https://node-bxsg.onrender.com/Videos
 
 ###
 
+PUT https://node-bxsg.onrender.com/Videos/
 PUT https://node-bxsg.onrender.com/Videos/
 Content-Type: application/json 
 
@@ -21,8 +27,13 @@ Content-Type: application/json
     "title": "videos 05",
     "description": "Descrição do vídeo 05",
     "duration": 150
+    "title": "videos 05",
+    "description": "Descrição do vídeo 05",
+    "duration": 150
 }
 
 ###
+
+DELETE  https://node-bxsg.onrender.com/Videos/
 
 DELETE  https://node-bxsg.onrender.com/Videos/
