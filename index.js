@@ -8,20 +8,22 @@
 // server.listen(33333);
 
 import { fastify } from 'fastify';
-import { DatabaseMemory } from "./database-memory.js";
+// import { DatabaseMemory } from "./database-memory.js";
+import { DatabasePostgres } from './database-postgres.js';
 
-const database = new DatabaseMemory()
+// const database = new DatabaseMemory()
+const database = new DatabasePostgres()
 
 const server = fastify();
 
 // Post cria os videos 
-server.post("/Videos", (req, reply) => {
+server.post("/Videos", async (req, reply) => {
 
   const {title, description, duration,} = req.body
 
     
 
-  database.create({
+  await database.create({
     title,
     description,
     duration,
@@ -34,9 +36,15 @@ server.post("/Videos", (req, reply) => {
 
 
 
-server.get("/Videos", () => {
-  const videos = database.list()
+server.get("/Videos", async (req) => {
+  
+  const search = req.query.search
+  
+   const videos = await database.list(search)
+  
+  
   return videos
+
 });
 
 
