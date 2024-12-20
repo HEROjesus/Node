@@ -1,24 +1,28 @@
-POST http://localhost:4000/Videos
+POST https://node-bxsg.onrender.com/Videos
 Content-Type: application/json 
 
 {
-    "title": "video 01"
+    "title": "video 01",
+    "description": "Descrição do vídeo 01",
+    "duration": 120
 }
 
 ###
 
 
-GET  http://localhost:4000/Videos
+GET  https://node-bxsg.onrender.com/Videos
 
 ###
 
-PUT http://localhost:4000/Videos/2f6631c1-43f1-4146-bb7d-c5ccdb3bf22d
+PUT https://node-bxsg.onrender.com/Videos/
 Content-Type: application/json 
 
 {
-    "title": "videos 05"
+    "title": "videos 05",
+    "description": "Descrição do vídeo 05",
+    "duration": 150
 }
 
 ###
 
-DELETE  http://localhost:4000/Videos/d4bf0a74-f880-4a60-97c4-f9e5855d937c
+DELETE  https://node-bxsg.onrender.com/Videos/
