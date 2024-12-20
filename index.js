@@ -19,9 +19,9 @@ const server = fastify();
 // Post cria os videos 
 server.post("/Videos", async (req, reply) => {
 
-  const {title, description, duration,} = req.body
+  const { title, description, duration, } = req.body
 
-    
+
 
   await database.create({
     title,
@@ -37,12 +37,12 @@ server.post("/Videos", async (req, reply) => {
 
 
 server.get("/Videos", async (req) => {
-  
+
   const search = req.query.search
-  
-   const videos = await database.list(search)
-  
-  
+
+  const videos = await database.list(search)
+
+
   return videos
 
 });
@@ -50,10 +50,10 @@ server.get("/Videos", async (req) => {
 
 // PUT Atualiza 
 server.put("/Videos/:id", (req, reply) => {
-  const  VideosID = req.params.id
-  const {title, description, duration,} = req.body
+  const VideosID = req.params.id
+  const { title, description, duration, } = req.body
 
-   database.update(VideosID, {
+  database.update(VideosID, {
     title,
     description,
     duration,
@@ -65,8 +65,8 @@ server.put("/Videos/:id", (req, reply) => {
 
 // DELETE Apaga o conteudo  
 server.delete("/Videos/:id", (req, reply) => {
-  
-  const  VideosID = req.params.id
+
+  const VideosID = req.params.id
 
   database.delete(VideosID)
 
@@ -75,5 +75,5 @@ server.delete("/Videos/:id", (req, reply) => {
 });
 
 server.listen({
-  port: 4000,
+  port: process.env.PORT ?? 4000,
 });

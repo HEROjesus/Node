@@ -12,7 +12,7 @@ GET  http://localhost:4000/Videos
 
 ###
 
-PUT http://localhost:4000/Videos/aebb085b-a551-4f02-ac64-b6ebc509945e
+PUT http://localhost:4000/Videos/2f6631c1-43f1-4146-bb7d-c5ccdb3bf22d
 Content-Type: application/json 
 
 {
@@ -21,4 +21,4 @@ Content-Type: application/json
 
 ###
 
-DELETE  http://localhost:4000/Videos/af23f9a7-0b1c-42b4-9c35-0b49137a9ff9
+DELETE  http://localhost:4000/Videos/d4bf0a74-f880-4a60-97c4-f9e5855d937c
